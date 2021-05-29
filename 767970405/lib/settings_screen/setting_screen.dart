@@ -649,10 +649,10 @@ class BackgroundImageScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: OutlinedButton(
-                          onPressed: () {
+                          onPressed: () async {
                             final cubit =
                                 context.read<ChatInterfaceSettingCubit>();
-                            cubit.pickImage();
+                            await cubit.pickImage();
                             cubit.saveBackgroundImage(
                                 cubit.state.pathBackgroundImage);
                           },
@@ -677,10 +677,10 @@ class BackgroundImageScreen extends StatelessWidget {
                       ListTile(
                         leading: Icon(Icons.delete),
                         title: Text('Unset Image'),
-                        onTap: () {
+                        onTap: () async {
                           final cubit =
                               context.read<ChatInterfaceSettingCubit>();
-                          cubit.unsetImage();
+                          await cubit.unsetImage();
                           cubit.saveBackgroundImage('');
                         },
                       ),
@@ -689,10 +689,10 @@ class BackgroundImageScreen extends StatelessWidget {
                         child: ListTile(
                           leading: Icon(Icons.wallpaper),
                           title: Text('Pick a new Image'),
-                          onTap: () {
+                          onTap: () async  {
                             final cubit =
                                 context.read<ChatInterfaceSettingCubit>();
-                            cubit.pickImage();
+                            await cubit.pickImage();
                             cubit.saveBackgroundImage(
                                 cubit.state.pathBackgroundImage);
                           },

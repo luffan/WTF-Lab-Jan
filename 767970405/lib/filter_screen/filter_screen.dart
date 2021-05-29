@@ -97,10 +97,12 @@ class FilterScreen extends StatelessWidget {
   Widget get statisticFilterBody {
     return BlocBuilder<FilterScreenCubit, FilterScreenState>(
       builder: (context, state) {
-        return TabItem(
-          list: state.pages,
-          typeTab: TypeTab.pages,
-          word: 'page',
+        return Center(
+          child: TabItem(
+            list: state.pages,
+            typeTab: TypeTab.pages,
+            word: 'page',
+          ),
         );
       },
     );

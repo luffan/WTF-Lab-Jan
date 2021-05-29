@@ -55,7 +55,7 @@ class ChatInterfaceSettingCubit extends Cubit<ChatInterfaceSettingState> {
   Future<String> loadBackgroundImage() async {
     var prefs = await SharedPreferences.getInstance();
     var str = prefs.getString('backgroundImage');
-    return str;
+    return str ?? '';
   }
 
   Future<void> saveBackgroundImage(String path) async {

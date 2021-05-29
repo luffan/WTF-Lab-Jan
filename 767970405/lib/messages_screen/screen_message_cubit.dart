@@ -188,6 +188,7 @@ class ScreenMessageCubit extends Cubit<ScreenMessageState> {
     );
     var id = await repository.addMessage(newMsg);
     state.list.add(newMsg.copyWith(id: id));
+    state.list.sort();
     controller.text = '';
     emit(
       state.copyWith(
